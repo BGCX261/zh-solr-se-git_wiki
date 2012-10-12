@@ -44,7 +44,12 @@
     * ./solr.sh start
     * cd logs
     * more solr.log -- 检查日志是否有异常信息
-
   # 创建core-chinese的索引，并且部署索引
+    * cd /var/zh-solr-se/solr/indexer
+    * ./run-indexer.sh core-chinese
+  {{{
+FYI.
+如果上面创建索引的命令出现curl异常，需要你的linux机器上安装curl，使用命令 apt-get install curl 或者 yum install curl
 
+}}}
 ==测试==
