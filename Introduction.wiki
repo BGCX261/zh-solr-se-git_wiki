@@ -4,12 +4,12 @@
 本搜索引擎框架实现了针对中文文本索引、搜索的基本功能和扩展接口。在solr/lucence和paoding基础上封装，结合中文文本特点，单独定制开发的一款搜索引擎框架。框架实现了multi-core共享solr，独立的索引创建、部署，支持多种格式数据接口，基本搜索接口、搜索结果多维度评价等功能。本框架中几个子工程需要使用maven2打包、编译。
 
 ==使用的开源框架和版本==
-*apache solr 1.4
-*lucence 2.9.3
-*paoding-2.0.4-beta
-*servlet-2.4
-*maven2
-*sun-jdk-1.6
+  *apache solr 1.4
+  *lucence 2.9.3
+  *paoding-2.0.4-beta
+  *servlet-2.4
+  *maven2
+  *sun-jdk-1.6
 
 ==下载区文件介绍==
 *zh-solr-se-src-0.1.zip 本项目的源代码（非常干净）
