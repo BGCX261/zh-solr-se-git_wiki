@@ -20,19 +20,19 @@ main()
 
   * 修改IndexerMain，添加MovieIndexer到工厂方法
 {{{
-private IndexerBase getIndexer(final String coreName) throws UnsupportedCoreException {
+	private IndexerBase getIndexer(final String coreName)
+			throws UnsupportedCoreException {
 		if (SolrConstants.CORE_NAME_CHINESE.equalsIgnoreCase(coreName)) {
 			return new ChineseIndexer();
-		}else if(SolrConstants.CORE_NAME_Movie.equalsIgnoreCase(coreName)){
-return new MovieIndexer();
-}else{
+		} else if (SolrConstants.CORE_NAME_MOVIE.equalsIgnoreCase(coreName)) {
+			return new MovieIndexer();
+		} else {
 			throw new UnsupportedCoreException(coreName);
 		}
 	}
-}}} 
+}}}
 
 ==搜索部分==
 1. 
 
 ==中文解析部分==
-
