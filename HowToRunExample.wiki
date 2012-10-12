@@ -28,6 +28,6 @@ http://localhost:8983/solr/
   
 可以看到页面只有一个core-chinese，点击进入chinese页面
 
-在Query string文本框输入 *:*
+在Query string文本框输入 "*:*"
 
 点击Search，可以看到整个core-chinese的所有数据（xml格式）。
