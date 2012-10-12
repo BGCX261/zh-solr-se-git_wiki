@@ -33,6 +33,47 @@ main()
 }}}
 
 ==搜索部分==
-1. 
+1. 将searcher导入eclipse
+2. 参照chinese包，创建你的包，还是用movie举例
+{{{
+public class MovieSearchService extends DefaultSearchService {
+...
+重写 execute()
+}}}
+
+3. 在SearchServiceFactory添加movie的searchservice类
+
+
+==solr配置==
+1. 创建core-movie
+  * cd /var/zh-solr-se/solr/solr
+  * cp -r core-chinese core-movie
+  * cd core-movie/conf
+  * 修改schema.xml(主要是字段和要选取的数据类型), 这是core-chinese的字段，你需要修改为movie的字段，类型，是否需要索引、是否存储到索引... 修改schma的名字
+{{{
+<schema name="chinese" version="1.1">
+
+...
+
+<fields>
+   <field name="chinese_id" type="string" indexed="true" stored="true" required="true" />
+   <field name="chinese_name" type="string" indexed="true" stored="true" required="false" />
+   <field name="chinese_content" type="text" indexed="true" stored="true" required="false" omitNorms="true"/>
+
+   <dynamicField name="_local*" type="sdouble"  indexed="true" stored="true"/>
+</fields>
+}}}
+  * 修改solrconfig.xml, 制定索引数据位置
+{{{
+<dataDir>${solr.data.dir:./solr/core-movie/data}</dataDir>
+}}}
+
+2. 添加core-movie到solr.xml
+cd /var/zh-solr-se/solr/solr
+添加下面一行：
+{{{
+<core name="core-movie" instanceDir="core-movie"/>
+}}}
 
 ==中文解析部分==
+使用paoding分词
