@@ -1,0 +1,38 @@
+#labels Phase-Implementation,Phase-Design,Phase-Support,Featured
+=如何定制化开发自己的搜索引擎=
+
+==索引部分==
+1. 将indexer工程导入eclipse（any IDE you prefer）
+有一个非常简便的方法，进入indexer目录，使用命令 mvn eclipse:eclipse，然后在eclipse中导入现有工程即可。
+
+2. 创建你的indexer
+  * 参照chinese包，建立你的包，举个例子，你的包名叫 movie
+  * 创建class, 参照ChineseIndexer
+{{{
+public class MovieIndexer extends IndexerBase {
+...
+
+重写
+indexAllDocuments()
+main()
+
+}}}
+
+  * 修改IndexerMain，添加MovieIndexer到工厂方法
+{{{
+private IndexerBase getIndexer(final String coreName) throws UnsupportedCoreException {
+		if (SolrConstants.CORE_NAME_CHINESE.equalsIgnoreCase(coreName)) {
+			return new ChineseIndexer();
+		}else if(SolrConstants.CORE_NAME_Movie.equalsIgnoreCase(coreName)){
+return new MovieIndexer();
+}else{
+			throw new UnsupportedCoreException(coreName);
+		}
+	}
+}}} 
+
+==搜索部分==
+1. 
+
+==中文解析部分==
+
