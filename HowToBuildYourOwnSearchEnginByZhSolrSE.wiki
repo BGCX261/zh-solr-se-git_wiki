@@ -76,4 +76,14 @@ cd /var/zh-solr-se/solr/solr
 }}}
 
 ==中文解析部分==
-使用paoding分词
+  * 使用paoding分词
+  * 在solr-paoding-analysis工程中
+  * 中文字典在solr/dic目录
+  * 对于customized后的分词类，在schema.xml中修改
+{{{
+ <fieldType name="text" class="solr.TextField" positionIncrementGap="100">
+      <analyzer type="index">
+        <!--<tokenizer class="solr.WhitespaceTokenizerFactory"/>-->
+        <tokenizer class="net.paoding.analysis.analyzer.ChineseTokenizerFactory"/>
+...
+}}}
