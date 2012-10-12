@@ -25,5 +25,6 @@
   *solr-paoding-analysis --- paoding绑定solr部分
 
 ==FYI==
+
   *项目使用maven2组织，请使用的同学先安装maven2。
   *项目在linux下安装编译，因为项目使用了linux文件系统的路径表法方式，可能在其他系统上会出现问题。
