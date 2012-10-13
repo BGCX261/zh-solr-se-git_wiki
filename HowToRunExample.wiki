@@ -1,4 +1,4 @@
-#labels Featured,Phase-Deploy
+#labels 运行工程中的样本,Phase-Deploy,Featured
 =如何运行工程中的样本？=
 ==要点==
 zh-solr-se-0.1.zip中已经包含样本和数据
