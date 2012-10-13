@@ -1,4 +1,4 @@
-#labels Featured,Phase-Requirements,Phase-Design
+#labels 简单介绍,Phase-Requirements,Phase-Design,Featured
 =基于solr的中文搜索引擎（chinese search engine base on solr）=
 ==简单介绍==
    本搜索引擎框架实现了针对中文文本索引、搜索的基本功能和扩展接口。在solr/lucence和paoding基础上封装，结合中文文本特点，单独定制开发的一款搜索引擎框架。框架实现了multi-core共享solr，独立的索引创建、部署，支持多种格式数据接口，基本搜索接口、搜索结果多维度评价等功能。本框架中几个子工程需要使用maven2打包、编译。
