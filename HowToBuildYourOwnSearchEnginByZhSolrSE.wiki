@@ -1,4 +1,4 @@
-#labels Phase-Implementation,Phase-Design,Phase-Support,Featured
+#labels 如何定制化开发自己的搜索引擎,Phase-Design,Phase-Support,Featured
 =如何定制化开发自己的搜索引擎=
 
 ==索引部分==
